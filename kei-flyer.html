@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KEI's Conditioning Room チラシ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #e2ddd8;
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
+  min-height: 100vh;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ===== A4本体 ===== */
+.flyer {
+  width: 210mm;
+  min-height: 297mm;
+  background: #fdf8f4;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== 背景の花模様（装飾） ===== */
+.bg-deco {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== トップ：ヘッダー ===== */
+.top-header {
+  background: #c9a8a0;
+  padding: 11px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+.th-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11pt;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: .2em;
+}
+.th-sub {
+  font-size: 7pt;
+  color: rgba(255,255,255,.85);
+  letter-spacing: .14em;
+  font-weight: 300;
+}
+
+/* ===== ヒーローエリア ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 52mm;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, #fdf0ec 0%, #fdf8f4 100%);
+  padding: 28px 28px 22px;
+}
+
+.hero-text { }
+
+.night-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #c9a8a0;
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 12px rgba(180,130,122,.3);
+}
+.night-badge .moon { font-size: 11pt; }
+.night-badge .nbtext {
+  font-size: 9pt;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: .12em;
+}
+
+.main-catch {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 20pt;
+  font-weight: 800;
+  color: #4a3830;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  letter-spacing: .03em;
+}
+.main-catch em {
+  font-style: normal;
+  color: #c9a8a0;
+}
+
+.sub-catch {
+  font-size: 8.5pt;
+  color: #8a7068;
+  line-height: 1.9;
+  font-weight: 300;
+  border-left: 2px solid #e8c8c0;
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+/* 国家資格バッジ */
+.shikaku-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #e8c8c0;
+  border-radius: 6px;
+  padding: 8px 14px;
+  box-shadow: 0 2px 8px rgba(180,130,122,.12);
+}
+.shikaku-badge .sb-icon { font-size: 14pt; }
+.shikaku-badge .sb-text {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 8.5pt;
+  font-weight: 600;
+  color: #4a3830;
+  line-height: 1.5;
+}
+.shikaku-badge .sb-text small {
+  display: block;
+  font-size: 7pt;
+  color: #9a8078;
+  font-weight: 300;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ヒーロー右：イラスト */
+.hero-illust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+/* ===== ピンクの帯 ===== */
+.pink-band {
+  background: linear-gradient(135deg, #e8c8c0, #ddb8b0);
+  padding: 12px 28px;
+  position: relative;
+  z-index: 2;
+}
+.pink-band-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.pb-item {
+  text-align: center;
+  color: #fff;
+}
+.pb-item .pb-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20pt;
+  font-weight: 600;
+  line-height: 1;
+}
+.pb-item .pb-unit { font-size: 9pt; font-weight: 300; }
+.pb-item .pb-label { font-size: 7pt; font-weight: 300; letter-spacing: .1em; margin-top: 2px; opacity: .9; }
+.pb-divider { width: 1px; height: 36px; background: rgba(255,255,255,.4); }
+
+/* ===== セクション共通 ===== */
+.section {
+  padding: 18px 28px;
+  position: relative;
+  z-index: 2;
+}
+.sec-label {
+  font-size: 7pt;
+  letter-spacing: .22em;
+  color: #c9a8a0;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+.sec-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e8d0c8;
+}
+.sec-title-jp {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 11pt;
+  font-weight: 800;
+  color: #4a3830;
+  margin-left: 6px;
+  font-style: normal;
+}
+
+/* ===== お悩みグリッド ===== */
+.worry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+.worry-item {
+  background: #fff;
+  border: 1px solid #f0ddd8;
+  border-radius: 8px;
+  padding: 10px 13px;
+  font-size: 8.5pt;
+  color: #5a4840;
+  font-weight: 400;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 2px 6px rgba(180,130,122,.08);
+}
+.worry-item .wi-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #e8b8b0;
+  flex-shrink: 0;
+}
+
+/* ===== 特徴カード ===== */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.feature-card {
+  background: #fff;
+  border: 1px solid #f0ddd8;
+  border-radius: 10px;
+  padding: 13px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  box-shadow: 0 2px 8px rgba(180,130,122,.08);
+}
+.fc-icon { font-size: 16pt; flex-shrink: 0; }
+.fc-body h4 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 9.5pt;
+  font-weight: 800;
+  color: #4a3830;
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+.fc-body p {
+  font-size: 7.5pt;
+  color: #9a8078;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ===== 区切り ===== */
+.divider {
+  margin: 0 28px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e8c8c0, transparent);
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== 料金 ===== */
+.price-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.price-card {
+  border-radius: 10px;
+  padding: 16px 14px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #f0ddd8;
+  box-shadow: 0 2px 8px rgba(180,130,122,.08);
+}
+.price-card.featured {
+  background: linear-gradient(135deg, #fdf0ec, #fce8e4);
+  border-color: #ddb8b0;
+}
+.popular-tag {
+  display: inline-block;
+  background: #c9a8a0;
+  color: #fff;
+  font-size: 6.5pt;
+  padding: 2px 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.plan-label {
+  font-size: 7pt;
+  color: #b09890;
+  letter-spacing: .1em;
+  margin-bottom: 5px;
+}
+.price-card.featured .plan-label { color: #c9a8a0; }
+.plan-min {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22pt;
+  font-weight: 600;
+  color: #4a3830;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.plan-min span { font-size: 11pt; }
+.plan-price {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 17pt;
+  font-weight: 800;
+  color: #c9a8a0;
+  line-height: 1;
+}
+.plan-price span { font-size: 10pt; }
+
+.price-notes {
+  font-size: 7.5pt;
+  color: #a09088;
+  line-height: 2;
+  font-weight: 300;
+}
+.card-ok {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid #e8d0c8;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 7.5pt;
+  color: #6a5850;
+  margin-bottom: 4px;
+}
+.caution {
+  font-size: 7pt;
+  color: #c09090;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 2px;
+  line-height: 1.6;
+}
+
+/* ===== アクセス ===== */
+.access-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #f0ddd8;
+  border-radius: 10px;
+  padding: 13px 18px;
+  box-shadow: 0 2px 8px rgba(180,130,122,.08);
+}
+.access-icon { font-size: 18pt; flex-shrink: 0; }
+.access-body h4 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 10pt;
+  font-weight: 800;
+  color: #4a3830;
+  margin-bottom: 2px;
+}
+.access-body p {
+  font-size: 7.5pt;
+  color: #9a8078;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ===== フッターCTA ===== */
+.footer-cta {
+  margin-top: auto;
+  background: linear-gradient(135deg, #c9a8a0 0%, #b89890 100%);
+  padding: 20px 28px;
+  position: relative;
+  z-index: 2;
+}
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.cta-left h2 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 13pt;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+.cta-left .hours {
+  font-size: 8pt;
+  color: rgba(255,255,255,.88);
+  line-height: 1.9;
+  font-weight: 300;
+}
+.cta-right { text-align: right; flex-shrink: 0; }
+.facility-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12pt;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: .12em;
+  margin-bottom: 5px;
+}
+.tel-placeholder {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 15pt;
+  font-weight: 800;
+  color: #fff;
+  border-bottom: 1.5px dashed rgba(255,255,255,.6);
+  padding-bottom: 2px;
+  display: inline-block;
+  letter-spacing: .06em;
+}
+.tel-label {
+  font-size: 6.5pt;
+  color: rgba(255,255,255,.75);
+  margin-top: 3px;
+  text-align: right;
+}
+
+/* ===== 印刷 ===== */
+@media print {
+  body { background: none; padding: 0; margin: 0; }
+  .flyer { width: 210mm; min-height: 297mm; box-shadow: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+@page { size: A4 portrait; margin: 0; }
+</style>
+</head>
+<body>
+<div class="flyer">
+
+  <!-- トップヘッダー -->
+  <div class="top-header">
+    <span class="th-name">KEI's Conditioning Room</span>
+    <span class="th-sub">PERSONAL STRETCH ＆ SEITAI　八丁堀</span>
+  </div>
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <div class="hero-text">
+      <div class="night-badge">
+        <span class="moon">🌙</span>
+        <span class="nbtext">最終入店 22:00 まで受付</span>
+      </div>
+      <h1 class="main-catch">
+        その日の疲れを、<br>
+        <em>その日のうちに</em><br>
+        リセット。
+      </h1>
+      <p class="sub-catch">
+        仕事帰りに、そのまま立ち寄れる。<br>
+        プロの技術で、体を丁寧にケア。<br>
+        完全個室で、安心してお任せください。
+      </p>
+      <div class="shikaku-badge">
+        <span class="sb-icon">🏅</span>
+        <div class="sb-text">
+          国家資格保有者によるストレッチ整体
+          <small>確かな知識と技術をもつプロが担当します</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- イラスト：リラックスする女性のシルエット -->
+    <div class="hero-illust">
+      <svg width="140" height="200" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- 背景の丸 -->
+        <circle cx="70" cy="100" r="65" fill="#fce8e4" opacity="0.7"/>
+        <circle cx="70" cy="100" r="52" fill="#fdf0ec" opacity="0.5"/>
+
+        <!-- ベッド・マット -->
+        <rect x="10" y="148" width="120" height="12" rx="6" fill="#e8c8c0"/>
+        <rect x="15" y="144" width="110" height="10" rx="5" fill="#f0d8d0"/>
+
+        <!-- 枕 -->
+        <ellipse cx="32" cy="143" rx="18" ry="8" fill="#fff" opacity="0.9"/>
+        <ellipse cx="32" cy="143" rx="14" ry="5" fill="#fce8e4"/>
+
+        <!-- 女性：仰向けでリラックス -->
+        <!-- 体 -->
+        <ellipse cx="80" cy="138" rx="42" ry="9" fill="#e8c0b8"/>
+        <!-- 腕 -->
+        <path d="M50 135 Q40 130 38 140" stroke="#e8c0b8" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M110 135 Q120 130 122 140" stroke="#e8c0b8" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <!-- 脚 -->
+        <ellipse cx="80" cy="147" rx="38" ry="8" fill="#d4a8a0"/>
+        <!-- 頭 -->
+        <circle cx="32" cy="132" r="13" fill="#f0d0c0"/>
+        <!-- 髪 -->
+        <ellipse cx="32" cy="125" rx="13" ry="8" fill="#8a6858"/>
+        <path d="M20 127 Q18 140 22 145" stroke="#8a6858" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M44 127 Q46 138 42 144" stroke="#8a6858" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <!-- 目（閉じて安心） -->
+        <path d="M28 132 Q31 134 34 132" stroke="#6a5040" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <!-- 笑顔 -->
+        <path d="M29 136 Q32 138 35 136" stroke="#c09080" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+
+        <!-- 花の装飾 -->
+        <circle cx="110" cy="60" r="6" fill="#f0c8c0" opacity="0.6"/>
+        <circle cx="116" cy="55" r="4" fill="#e8b8b0" opacity="0.5"/>
+        <circle cx="104" cy="55" r="4" fill="#f0c8c0" opacity="0.5"/>
+        <circle cx="110" cy="49" r="4" fill="#e8b8b0" opacity="0.5"/>
+        <circle cx="110" cy="60" r="3" fill="#fff" opacity="0.8"/>
+
+        <circle cx="25" cy="75" r="5" fill="#e8d0c8" opacity="0.5"/>
+        <circle cx="30" cy="70" r="3.5" fill="#f0d8d0" opacity="0.5"/>
+        <circle cx="20" cy="70" r="3.5" fill="#e8d0c8" opacity="0.5"/>
+        <circle cx="25" cy="65" r="3.5" fill="#f0d8d0" opacity="0.5"/>
+        <circle cx="25" cy="75" r="2.5" fill="#fff" opacity="0.7"/>
+
+        <!-- 葉っぱの装飾 -->
+        <ellipse cx="118" cy="85" rx="8" ry="4" fill="#c8d8c0" opacity="0.5" transform="rotate(-30 118 85)"/>
+        <ellipse cx="22" cy="108" rx="7" ry="3.5" fill="#c8d8c0" opacity="0.4" transform="rotate(20 22 108)"/>
+
+        <!-- ✦ 星のきらめき -->
+        <text x="95" y="48" font-size="10" fill="#e8b8b0" opacity="0.7">✦</text>
+        <text x="18" y="95" font-size="8" fill="#e8c8c0" opacity="0.6">✦</text>
+        <text x="108" y="108" font-size="7" fill="#d4b8b0" opacity="0.5">✦</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ピンクの帯：ポイント数値 -->
+  <div class="pink-band">
+    <div class="pink-band-inner">
+      <div class="pb-item">
+        <div class="pb-num">22<span class="pb-unit">時</span></div>
+        <div class="pb-label">最終入店</div>
+      </div>
+      <div class="pb-divider"></div>
+      <div class="pb-item">
+        <div class="pb-num">2<span class="pb-unit">分</span></div>
+        <div class="pb-label">八丁堀駅から</div>
+      </div>
+      <div class="pb-divider"></div>
+      <div class="pb-item">
+        <div class="pb-num" style="font-size:14pt;">個室</div>
+        <div class="pb-label">完全プライベート</div>
+      </div>
+      <div class="pb-divider"></div>
+      <div class="pb-item">
+        <div class="pb-num" style="font-size:14pt;">国家</div>
+        <div class="pb-label">資格保有者が担当</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- お悩み -->
+  <div class="section">
+    <div class="sec-label">Concerns <span class="sec-title-jp">こんなお悩みはありませんか？</span></div>
+    <div class="worry-grid">
+      <div class="worry-item"><div class="wi-dot"></div>疲れがとれない</div>
+      <div class="worry-item"><div class="wi-dot"></div>寝てもスッキリしない</div>
+      <div class="worry-item"><div class="wi-dot"></div>デスクワークで肩・首がガチガチ</div>
+      <div class="worry-item"><div class="wi-dot"></div>仕事帰りにリフレッシュしたい</div>
+    </div>
+  </div>
+
+  <!-- 特徴 -->
+  <div class="section" style="padding-top:10px;">
+    <div class="sec-label">Features <span class="sec-title-jp">当院の特徴</span></div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="fc-icon">🔒</div>
+        <div class="fc-body">
+          <h4>完全個室で安心サポート</h4>
+          <p>プライベートな空間で、人目を気にせずリラックスできます。女性おひとりでも安心です。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">🚉</div>
+        <div class="fc-body">
+          <h4>八丁堀駅から徒歩２分</h4>
+          <p>駅近で通いやすく、仕事帰りにそのまま立ち寄れます。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">👗</div>
+        <div class="fc-body">
+          <h4>着替えのご用意あり</h4>
+          <p>お仕事帰りでもご安心ください。着替えはご用意しています。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">🌙</div>
+        <div class="fc-body">
+          <h4>夜遅くまで対応</h4>
+          <p>最終入店22:00。残業後でも予約できます。完全予約制です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 料金 -->
+  <div class="section" style="padding-top:14px;">
+    <div class="sec-label">Menu <span class="sec-title-jp">料金メニュー</span></div>
+    <div class="price-cards">
+      <div class="price-card">
+        <div class="plan-label">スタンダード</div>
+        <div class="plan-min">60<span>分</span></div>
+        <div class="plan-price">8,000<span>円</span></div>
+      </div>
+      <div class="price-card featured">
+        <div class="popular-tag">★ おすすめ</div>
+        <div class="plan-label">じっくりコース</div>
+        <div class="plan-min">80<span>分</span></div>
+        <div class="plan-price">10,000<span>円</span></div>
+      </div>
+    </div>
+    <div class="price-notes">
+      <div class="card-ok">💳 クレジットカード払いOK</div><br>
+      ※表示価格は税込　／　完全予約制<br>
+      <span class="caution">⚠️ 飲酒されている方のご利用はお断りしております</span>
+    </div>
+  </div>
+
+  <!-- アクセス -->
+  <div class="section" style="padding-top:10px; padding-bottom:14px;">
+    <div class="sec-label">Access <span class="sec-title-jp">アクセス</span></div>
+    <div class="access-box">
+      <div class="access-icon">📍</div>
+      <div class="access-body">
+        <h4>八丁堀駅　徒歩２分　駅近で通いやすい</h4>
+        <p>東京メトロ日比谷線・JR京葉線　八丁堀駅より徒歩２分</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- フッターCTA -->
+  <div class="footer-cta">
+    <div class="cta-inner">
+      <div class="cta-left">
+        <h2>ご予約・お問い合わせ<br>お気軽にどうぞ</h2>
+        <div class="hours">
+          最終入店：22:00　／　完全予約制<br>
+          年中無休
+        </div>
+      </div>
+      <div class="cta-right">
+        <div class="facility-en">KEI's Conditioning Room</div>
+        <div class="tel-placeholder">000-0000-0000</div>
+        <div class="tel-label">※電話番号を入力してください</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
