@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>はっとり治療院｜無痛整体鍼・東京八丁堀</title>
+<meta name="description" content="東京・八丁堀のはっとり治療院。無痛整体鍼で自然治癒力を高める治療。頭痛・腰痛・肩こりから妊活サポートまで。40年以上の実績。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────
+   DESIGN SYSTEM
+───────────────────────────────────── */
+:root {
+  --ink:       #1e1810;
+  --deep:      #2e2018;
+  --muted:     #7a6a58;
+  --warm:      #f5ede0;
+  --cream:     #faf6ef;
+  --paper:     #fffdf8;
+  --gold:      #b8976a;
+  --gold-lt:   #d9bc90;
+  --terracotta:#b86450;
+  --blush:     #e0bfae;
+  --sage:      #8ea08b;
+  --sage-lt:   #dce8da;
+  --border:    rgba(30,24,16,0.10);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.85;
+  overflow-x: hidden;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--gold);}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 72px;
+  background: rgba(250,246,239,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled{box-shadow: 0 2px 20px rgba(30,24,16,0.08);}
+
+.nav-logo {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+.nav-logo span {
+  display: block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-top: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: var(--ink);
+  color: var(--paper) !important;
+  padding: 10px 24px;
+  font-size: 12px !important;
+  letter-spacing: 0.2em !important;
+  transition: background 0.25s !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--terracotta) !important; color: white !important; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  padding-top: 72px;
+  display: grid;
+  grid-template-columns: 56% 44%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 72px 100px 88px;
+  position: relative;
+  background: var(--paper);
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.5em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(44px, 5.5vw, 78px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 36px;
+  color: var(--ink);
+}
+.hero-title .accent { color: var(--terracotta); }
+.hero-title .sub {
+  display: block;
+  font-size: clamp(22px, 2.5vw, 36px);
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.hero-body {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 440px;
+  line-height: 2;
+  margin-bottom: 48px;
+  border-left: 2px solid var(--gold-lt);
+  padding-left: 20px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 16px 44px;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: all 0.25s;
+  border: 2px solid var(--ink);
+}
+.btn-primary:hover { background: var(--terracotta); border-color: var(--terracotta); }
+
+.btn-secondary {
+  display: inline-block;
+  color: var(--ink);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-secondary:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+.hero-tel {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.hero-tel .label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+}
+.hero-tel .number {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+.hero-tel .number:hover { color: var(--terracotta); }
+
+/* hero right panel */
+.hero-right {
+  position: relative;
+  background: linear-gradient(160deg, #e8ddd0 0%, #d8c8b4 60%, #c8b49a 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px 52px;
+}
+
+.hero-bg-char {
+  position: absolute;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 560px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.0);
+  line-height: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: drift 12s ease-in-out infinite;
+  user-select: none;
+  /* 白抜き文字（輪郭線）＋背景色との明暗差で存在感を出す */
+  -webkit-text-stroke: 2.5px rgba(255,255,255,0.55);
+  text-stroke: 2.5px rgba(255,255,255,0.55);
+  filter: drop-shadow(0 0 32px rgba(255,255,255,0.18));
+}
+@keyframes drift {
+  0%,100%{transform:translate(-50%,-50%) rotate(-3deg) scale(1);}
+  50%{transform:translate(-50%,-52%) rotate(3deg) scale(1.05);}
+}
+
+.hero-badges {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.badge {
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.8);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.3s, background 0.3s;
+  animation: slideIn 0.8s ease both;
+}
+.badge:hover { transform: translateX(-6px); background: rgba(255,255,255,0.8); }
+.badge:nth-child(1){animation-delay:0.2s;}
+.badge:nth-child(2){animation-delay:0.35s;}
+.badge:nth-child(3){animation-delay:0.5s;}
+.badge:nth-child(4){animation-delay:0.65s;}
+@keyframes slideIn {
+  from{opacity:0;transform:translateX(30px);}
+  to{opacity:1;transform:translateX(0);}
+}
+
+.badge-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--deep);
+  color: var(--gold);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.badge-text h4 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.badge-text p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ─── SECTION BASE ─── */
+.section { padding: 104px 0; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 48px; }
+
+.sec-label {
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 12px;
+}
+.sec-label::before {
+  content:'';
+  display:inline-block;
+  width:24px;height:1px;
+  background:var(--gold);
+}
+.sec-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 56px;
+}
+.sec-title.light { color: var(--paper); }
+.sec-title.center { text-align: center; }
+
+/* ─── ABOUT ─── */
+.about { background: var(--paper); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-text p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 2;
+  margin-bottom: 22px;
+}
+.about-highlight {
+  background: var(--deep);
+  color: var(--paper);
+  padding: 48px 44px;
+  position: relative;
+}
+.about-highlight::before {
+  content: '氣';
+  position: absolute;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 160px;
+  color: rgba(255,255,255,0.07);
+  right: 16px; bottom: -20px;
+  line-height: 1;
+  pointer-events: none;
+}
+.about-highlight h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.about-highlight p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  line-height: 2;
+  position: relative;
+  z-index: 1;
+}
+.about-highlight .steps-mini {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.step-mini {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.step-mini .num {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gold);
+  opacity: 0.5;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.step-mini p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+}
+.step-mini strong {
+  display: block;
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+/* ─── TREATMENTS ─── */
+.treatments { background: var(--cream); }
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.treatment-card {
+  background: var(--paper);
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  cursor: default;
+}
+.treatment-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 3px;
+  background: var(--gold);
+  transition: width 0.4s ease;
+}
+.treatment-card:hover { background: white; }
+.treatment-card:hover::before { width: 100%; }
+
+.treatment-card.featured {
+  background: var(--deep);
+  grid-column: span 1;
+}
+.treatment-card.featured:hover { background: #261c12; }
+.treatment-card.featured::before { background: var(--terracotta); }
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+  display: block;
+}
+.treatment-card h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+.treatment-card.featured h3 { color: var(--blush); }
+.treatment-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+.treatment-card.featured p { color: rgba(255,255,255,0.55); }
+.card-tag {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  padding: 4px 12px;
+  border: 1px solid var(--gold-lt);
+  color: var(--gold);
+}
+.treatment-card.featured .card-tag {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+
+/* ─── NINKATSU (妊活) ─── */
+.ninkatsu {
+  background: var(--deep);
+  position: relative;
+  overflow: hidden;
+}
+.ninkatsu::before {
+  content: '妊活';
+  font-family: 'Shippori Mincho', serif;
+  font-size: 340px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.04);
+  position: absolute;
+  right: -40px; top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.ninkatsu-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ninkatsu-text .sec-label { color: var(--blush); }
+.ninkatsu-text .sec-label::before { background: var(--blush); }
+.ninkatsu-text .sec-title { color: var(--paper); margin-bottom: 28px; }
+.ninkatsu-text p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.ninkatsu-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.nk-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 28px 32px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: background 0.3s;
+}
+.nk-card:hover { background: rgba(255,255,255,0.1); }
+.nk-dot {
+  width: 8px; height: 8px;
+  background: var(--terracotta);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+.nk-card h4 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--blush);
+  margin-bottom: 8px;
+}
+.nk-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.btn-ghost {
+  display: inline-block;
+  margin-top: 36px;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.8);
+  padding: 14px 40px;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.btn-ghost:hover { border-color: var(--blush); color: var(--blush); }
+
+/* ─── FAQ ─── */
+.faq { background: var(--paper); }
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+.faq-intro p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 2;
+  margin-top: 20px;
+}
+
+.faq-list { border-top: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  padding: 26px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: color 0.2s;
+  user-select: none;
+}
+.faq-q:hover { color: var(--terracotta); }
+.faq-q .q {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--terracotta);
+  flex-shrink: 0;
+  width: 24px;
+}
+.faq-q .text {
+  font-size: 15px;
+  flex: 1;
+  font-weight: 400;
+}
+.faq-q .toggle {
+  width: 28px; height: 28px;
+  border: 1px solid var(--gold-lt);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 14px;
+  color: var(--gold);
+  transition: transform 0.3s, background 0.3s;
+  flex-shrink: 0;
+}
+.faq-item.open .toggle { transform: rotate(45deg); background: var(--gold); color: white; }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.faq-item.open .faq-a { max-height: 600px; }
+.faq-a-inner {
+  padding: 0 0 28px 44px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 2;
+}
+
+/* ─── INFO ─── */
+.info { background: var(--warm); }
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.info-block {
+  background: var(--paper);
+  padding: 44px 36px;
+}
+.info-block h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.1em;
+}
+.info-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+.info-row .key {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  flex-shrink: 0;
+  margin-top: 3px;
+  min-width: 50px;
+}
+.info-row .val { color: var(--muted); line-height: 1.7; }
+
+.map-placeholder {
+  background: linear-gradient(160deg, var(--sage-lt), #c8d8c4);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--sage);
+  letter-spacing: 0.15em;
+  border: 1px solid rgba(143,160,139,0.3);
+}
+
+/* ─── CTA STRIP ─── */
+.cta-strip {
+  background: var(--terracotta);
+  padding: 80px 48px;
+  text-align: center;
+}
+.cta-strip h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 600;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.cta-strip p {
+  color: rgba(255,255,255,0.75);
+  font-size: 15px;
+  margin-bottom: 44px;
+  line-height: 2;
+}
+.cta-strip .btn-white {
+  display: inline-block;
+  background: white;
+  color: var(--terracotta);
+  padding: 18px 56px;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border: 2px solid white;
+  transition: all 0.25s;
+}
+.cta-strip .btn-white:hover { background: transparent; color: white; }
+.cta-strip .tel-big {
+  display: block;
+  margin-top: 32px;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+.cta-strip .tel-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.2em;
+  margin-top: 8px;
+  display: block;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink);
+  padding: 48px;
+}
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.footer-brand .logo {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--paper);
+  margin-bottom: 6px;
+}
+.footer-brand .sub {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.footer-brand p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.9;
+}
+.footer-nav {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.footer-nav a {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--gold); }
+.footer-copy {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.2em;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 40px;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+/* ─── FADE-IN ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 60px 32px; }
+  .hero-right { min-height: 50vh; }
+  .about-grid,
+  .ninkatsu-inner,
+  .faq-grid,
+  .footer-inner { grid-template-columns: 1fr; gap: 48px; }
+  .treatment-grid { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr; }
+  .container { padding: 0 24px; }
+  .section { padding: 72px 0; }
+  .footer-nav { justify-content: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">
+    はっとり治療院
+    <span>Hattori Acupuncture / Tokyo Hacchobori</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">治療について</a></li>
+    <li><a href="#treatments">対応症状</a></li>
+    <li><a href="#ninkatsu">妊活サポート</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+    <li><a href="#info">アクセス</a></li>
+    <li><a href="tel:0335230086" class="nav-cta">ご予約</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">東京・八丁堀　無痛整体鍼</p>
+    <h1 class="hero-title">
+      身体の<span class="accent">気</span>を整え、<br>
+      自然治癒力を<br>
+      <span class="sub">取り戻す治療院</span>
+    </h1>
+    <p class="hero-body">
+      目に見えないエネルギーの滞りに気づき、<br>
+      身体が自ら回復しようとする力を引き出す。<br>
+      40年以上積み重ねてきた、はっとり治療院の無痛整体鍼です。
+    </p>
+    <div class="hero-actions">
+      <a href="tel:0335230086" class="btn-primary">お電話でご予約</a>
+      <a href="#about" class="btn-secondary">治療のしくみを見る</a>
+    </div>
+    <div class="hero-tel">
+      <span class="label">TEL</span>
+      <a href="tel:0335230086" class="number">03-3523-0086</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-char">氣</div>
+    <div class="hero-badges">
+      <div class="badge">
+        <div class="badge-icon">✦</div>
+        <div class="badge-text">
+          <h4>無痛整体鍼</h4>
+          <p>痛みをほとんど感じない独自の施術法。<br>繊細な方・初めての方も安心。</p>
+        </div>
+      </div>
+      <div class="badge">
+        <div class="badge-icon">◎</div>
+        <div class="badge-text">
+          <h4>40年以上の実績</h4>
+          <p>東京・八丁堀で積み重ねてきた信頼と技術。</p>
+        </div>
+      </div>
+      <div class="badge">
+        <div class="badge-icon">⊕</div>
+        <div class="badge-text">
+          <h4>妊活サポート</h4>
+          <p>体外受精と並行した通院が増加。<br>化学的流産を繰り返す方へ。</p>
+        </div>
+      </div>
+      <div class="badge">
+        <div class="badge-icon">◈</div>
+        <div class="badge-text">
+          <h4>東京都中央区入船</h4>
+          <p>八丁堀駅より徒歩数分。<br>クレストフォルム東京日本橋 501</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="sec-label">無痛整体鍼とは</p>
+        <h2 class="sec-title">鍼を「刺す」のではなく、<br>「情報を与える」治療</h2>
+        <p>私たちの身体は、目に見えないエネルギー（気）が全身を流れています。身体に不調が生じると、その場所でエネルギーが滞ります。当院の治療は、ツボに「情報」を与えることで、身体が自らその滞りに気づき、正常に働き出すよう促します。</p>
+        <p>40年近い臨床の中で、「鍼を刺さなくても、ツボへの情報刺激だけで同等以上の効果が得られる」ことがわかりました。それが今の無痛整体鍼の形です。</p>
+        <p>特定の症状に直接対処する西洋医学に対し、東洋医学では全身のエネルギーの流れを整えることで、患者さん自身の自然治癒力を最大限に引き出します。</p>
+      </div>
+      <div class="about-highlight reveal">
+        <h3>治療のしくみ</h3>
+        <p>身体のどこかで滞りが起きても、気・情報エネルギーが正しく流れることで自然に回復していきます。</p>
+        <div class="steps-mini">
+          <div class="step-mini">
+            <span class="num">01</span>
+            <p><strong>滞りを「知らせる」</strong>ツボへの情報刺激で「ここが滞っています」というサインを身体に送る</p>
+          </div>
+          <div class="step-mini">
+            <span class="num">02</span>
+            <p><strong>身体が「気づく」</strong>身体の自己修復機能が働き始め、エネルギーの流れが回復する</p>
+          </div>
+          <div class="step-mini">
+            <span class="num">03</span>
+            <p><strong>自然治癒力が「発揮される」</strong>本来持っている治る力が最大限に引き出される</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TREATMENTS ═══ -->
+<section class="section treatments" id="treatments">
+  <div class="container">
+    <p class="sec-label">対応症状</p>
+    <h2 class="sec-title">こんなお悩みに対応しています</h2>
+    <div class="treatment-grid">
+      <div class="treatment-card reveal">
+        <span class="card-icon">◎</span>
+        <h3>頭痛・偏頭痛</h3>
+        <p>慢性的な頭痛・偏頭痛は、頚部や頭部のエネルギーの滞りと深く関係しています。根本から整えることで再発しにくい状態へ。</p>
+        <span class="card-tag">CHRONIC PAIN</span>
+      </div>
+      <div class="treatment-card reveal">
+        <span class="card-icon">◈</span>
+        <h3>腰痛・坐骨神経痛</h3>
+        <p>整形外科で改善しない腰痛・坐骨神経痛のご相談も多くいただいています。骨盤周辺の気の滞りを整え、身体の軸から変えます。</p>
+        <span class="card-tag">LOWER BACK</span>
+      </div>
+      <div class="treatment-card featured reveal">
+        <span class="card-icon">⊕</span>
+        <h3>妊活・不妊サポート</h3>
+        <p>体外受精と並行した来院が増加中。化学的流産を繰り返す方が体質改善を経て出産された事例が続いています。</p>
+        <span class="card-tag">NINKATSU</span>
+      </div>
+      <div class="treatment-card reveal">
+        <span class="card-icon">✦</span>
+        <h3>肩こり・首こり</h3>
+        <p>「マッサージに行くとその日は楽だが翌日元に戻る」という方に。エネルギーレベルから整えることで持続的な改善を目指します。</p>
+        <span class="card-tag">STIFF SHOULDER</span>
+      </div>
+      <div class="treatment-card reveal">
+        <span class="card-icon">◐</span>
+        <h3>自律神経・不眠</h3>
+        <p>ストレスや疲労による自律神経の乱れ・不眠。西洋薬では対処しにくい「根本の不調」を東洋医学の視点から整えます。</p>
+        <span class="card-tag">AUTONOMIC NERVE</span>
+      </div>
+      <div class="treatment-card reveal">
+        <span class="card-icon">◉</span>
+        <h3>婦人科系・生理不順</h3>
+        <p>子宮内膜症・子宮筋腫・生理痛・PMSなど。気・血の滞りを解消し、子宮・卵巣への血流と栄養循環を改善します。</p>
+        <span class="card-tag">GYNECOLOGY</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 妊活 ═══ -->
+<section class="section ninkatsu" id="ninkatsu">
+  <div class="container">
+    <div class="ninkatsu-inner">
+      <div class="ninkatsu-text reveal">
+        <p class="sec-label">妊活サポート</p>
+        <h2 class="sec-title light">化学的流産を<br>繰り返している方へ</h2>
+        <p>体外受精後、何度も化学的流産を経験され、心身ともに疲れ果てていませんか。当院の無痛整体鍼は不妊専門の治療ではありませんが、全身のコンディションを整えることで生殖機能が高まり、妊娠・出産という結果につながっています。</p>
+        <p>昨年・今年と、同様の状況から通院を始め、無事に出産された方からのご紹介で来院される方が増えています。</p>
+        <a href="#faq" class="btn-ghost">妊活に関するFAQを見る</a>
+      </div>
+      <div class="ninkatsu-cards reveal">
+        <div class="nk-card">
+          <div class="nk-dot"></div>
+          <div>
+            <h4>子宮・卵巣への血流改善</h4>
+            <p>気・血の滞りを解消し、細胞の代謝を促進。子宮や卵巣に十分な酸素と栄養が届く状態へ整えます。</p>
+          </div>
+        </div>
+        <div class="nk-card">
+          <div class="nk-dot"></div>
+          <div>
+            <h4>腎のエネルギーを補う</h4>
+            <p>漢方で生殖機能を司る「腎」。加齢・過労で不足したエネルギーを補い、妊娠しやすい身体に近づけます。</p>
+          </div>
+        </div>
+        <div class="nk-card">
+          <div class="nk-dot"></div>
+          <div>
+            <h4>ホルモン・自律神経の調整</h4>
+            <p>ストレスや不規則な生活によるホルモンバランスの乱れ、自律神経の不調を整えます。</p>
+          </div>
+        </div>
+        <div class="nk-card">
+          <div class="nk-dot"></div>
+          <div>
+            <h4>ご夫婦でのご来院も歓迎</h4>
+            <p>妊娠はご夫婦のコンディションが揃って実現するもの。男性の生殖機能・全身状態の改善も対応しています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-intro reveal">
+        <p class="sec-label">FAQ</p>
+        <h2 class="sec-title">よくある<br>ご質問</h2>
+        <p>初めての方・お問い合わせ前にご確認いただける内容をまとめました。解決しない場合はお気軽にお電話ください。</p>
+      </div>
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="q">Q</span>
+            <span class="text">鍼は痛いですか？</span>
+            <span class="toggle">＋</span>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            当院の「無痛整体鍼」は、名前の通りほとんど痛みを感じない施術法です。針を刺す刺激ではなく、ツボへの「情報刺激」を中心とした治療のため、初めての方や刺激に敏感な方にも多くご来院いただいています。「こんなに楽なんですか？」と驚かれる方がほとんどです。
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="q">Q</span>
+            <span class="text">何回くらい通えばよいですか？</span>
+            <span class="toggle">＋</span>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            症状・体質・これまでの経過により個人差があります。急性の症状は数回で改善が見られることもありますが、慢性的な不調や体質改善を目的とする場合は、週1〜2回のペースで3ヶ月程度を目安とする方が多いです。まず1〜2回受けていただき、身体の反応を見ながら相談しましょう。
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="q">Q</span>
+            <span class="text">産婦人科の不妊治療と並行できますか？</span>
+            <span class="toggle">＋</span>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            はい、多くの患者さんが産婦人科・生殖医療クリニックの治療と並行して来院されています。体外受精・移植のスケジュールに合わせた来院調整も可能です。通院中のクリニックや治療内容をお聞かせいただければ、より適切なアドバイスができます。
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="q">Q</span>
+            <span class="text">妊活で夫（男性）も受診できますか？</span>
+            <span class="toggle">＋</span>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            はい、ご夫婦でのご来院も歓迎です。妊娠はご夫婦のコンディションが揃ってはじめて実現するもの。男性の生殖機能・精力・全身エネルギー状態の改善も、当院では対応しています。「夫が性行為をあまり好まない」「回数が少ない」といった悩みのご相談を受けることもあります。
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="q">Q</span>
+            <span class="text">初診時に準備するものはありますか？</span>
+            <span class="toggle">＋</span>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            特別なご持参物は不要です。動きやすい服装でお越しいただくと施術がスムーズです。お薬を服用中の方は薬の名前をメモしてお持ちいただけると参考になります。女性の方は生理周期を把握しておいていただけると、治療計画の参考になります。
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="q">Q</span>
+            <span class="text">他に改善できる症状はありますか？</span>
+            <span class="toggle">＋</span>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            頭痛・偏頭痛・腰痛・坐骨神経痛・肩こり・首こり・自律神経の乱れ・不眠・冷え・むくみ・子宮内膜症・子宮筋腫・生理痛・PMSなど幅広くご相談いただけます。「いろいろな治療を試したがなかなか治らない」という方のご来院も多く、東洋医学の視点から全身を整えることで改善の糸口が見つかることがあります。
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="q">Q</span>
+            <span class="text">食事や生活習慣の指導もありますか？</span>
+            <span class="toggle">＋</span>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            「医食同源」の観点から、必要に応じてアドバイスをしています。例えば、輸入牛肉に多用される人工エストロゲン（女性ホルモン）の影響、食生活と生殖機能の関係などについてもお話しすることがあります。無理なく日常に取り入れられる範囲でのご提案ですので、ご安心ください。
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section class="section info" id="info">
+  <div class="container">
+    <p class="sec-label">診療案内</p>
+    <h2 class="sec-title">アクセス・診療時間</h2>
+    <div class="info-grid">
+      <div class="info-block reveal">
+        <h3>診療時間</h3>
+        <div class="info-row">
+          <span class="key">平日</span>
+          <span class="val">○:○○ 〜 ○○:○○<br><small>※ 要確認・ご予約制</small></span>
+        </div>
+        <div class="info-row">
+          <span class="key">土曜</span>
+          <span class="val">○:○○ 〜 ○○:○○</span>
+        </div>
+        <div class="info-row">
+          <span class="key">休診</span>
+          <span class="val">日曜・祝日<br><small>※ 詳細はお電話にてご確認ください</small></span>
+        </div>
+        <div class="info-row" style="margin-top:20px;">
+          <span class="key">TEL</span>
+          <span class="val"><a href="tel:0335230086" style="color:var(--ink);font-size:18px;font-family:'Shippori Mincho',serif;font-weight:600;text-decoration:none;">03-3523-0086</a></span>
+        </div>
+      </div>
+      <div class="info-block reveal">
+        <h3>所在地</h3>
+        <div class="info-row">
+          <span class="key">住所</span>
+          <span class="val">東京都中央区入船１−７−３<br>クレストフォルム東京日本橋 501</span>
+        </div>
+        <div class="info-row">
+          <span class="key">最寄り</span>
+          <span class="val">東京メトロ日比谷線・JR京葉線<br>「八丁堀」駅より徒歩数分</span>
+        </div>
+        <div class="map-placeholder">
+          📍 Googleマップ埋め込みエリア
+        </div>
+      </div>
+      <div class="info-block reveal">
+        <h3>治療費について</h3>
+        <div class="info-row">
+          <span class="key">初診</span>
+          <span class="val">詳細はお問い合わせください</span>
+        </div>
+        <div class="info-row">
+          <span class="key">再診</span>
+          <span class="val">詳細はお問い合わせください</span>
+        </div>
+        <div class="info-row">
+          <span class="key">保険</span>
+          <span class="val">自由診療<br><small>※ 保険適用外の場合があります</small></span>
+        </div>
+        <div class="info-row" style="margin-top:20px;">
+          <span class="key">予約</span>
+          <span class="val">完全予約制です。<br>初めての方はお電話にてご予約ください。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<div class="cta-strip">
+  <h2>まず、ご相談ください。<br>一緒に考えます。</h2>
+  <p>「いろいろ試したが改善しない」「化学的流産を繰り返している」<br>
+  そんな方のご連絡をお待ちしています。</p>
+  <a href="tel:0335230086" class="btn-white">電話でお問い合わせ</a>
+  <a href="tel:0335230086" class="tel-big">03-3523-0086</a>
+  <span class="tel-note">完全予約制 ／ 初診の方もお気軽にどうぞ</span>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">はっとり治療院</div>
+      <div class="sub">HATTORI ACUPUNCTURE — TOKYO HACCHOBORI</div>
+      <p>東京都中央区入船１−７−３<br>
+      クレストフォルム東京日本橋 501<br>
+      TEL: 03-3523-0086</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="#about">治療について</a>
+      <a href="#treatments">対応症状</a>
+      <a href="#ninkatsu">妊活サポート</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#info">アクセス</a>
+    </nav>
+  </div>
+  <p class="footer-copy">© はっとり治療院 All rights reserved.</p>
+</footer>
+
+<style>
+/* ─── 印刷ボタン ─── */
+.print-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  padding: 14px 24px;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(30,24,16,.2);
+  transition: background .25s;
+}
+.print-btn:hover { background: var(--gold-lt); }
+
+/* ─── 印刷時スタイル ─── */
+@media print {
+  .print-btn { display: none; }
+  nav { display: none !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { background: white; }
+
+  /* ヒーローを印刷用に縮小・調整 */
+  .hero {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 0 !important;
+    grid-template-columns: 50% 50% !important;
+    overflow: visible !important;
+  }
+  .hero-left {
+    padding: 32px 40px !important;
+  }
+  .hero-right {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 24px 32px !important;
+    overflow: visible !important;
+  }
+  .hero-title { font-size: 36px !important; }
+  .hero-body { font-size: 12px !important; }
+  .hero-actions { display: none; }
+  .hero-tel { margin-top: 8px !important; }
+
+  /* バッジが全部見えるように */
+  .hero-badges {
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    overflow: visible !important;
+  }
+  .badge {
+    animation: none !important;
+    opacity: 1 !important;
+    padding: 12px 16px !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .hero-bg-char { display: none; }
+
+  section, footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+</style>
+
+<button class="print-btn" onclick="window.print()">🖨 このページを印刷</button>
+
+<script>
+// nav scroll style
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// FAQ toggle
+function toggleFaq(el) {
+  el.closest('.faq-item').classList.toggle('open');
+}
+
+// reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
