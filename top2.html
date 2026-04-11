@@ -1220,6 +1220,42 @@ footer {
   <p class="footer-copy">© はっとり治療院 All rights reserved.</p>
 </footer>
 
+<style>
+/* ─── 印刷ボタン ─── */
+.print-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  padding: 14px 24px;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(30,24,16,.2);
+  transition: background .25s;
+}
+.print-btn:hover { background: var(--gold-lt); }
+
+/* ─── 印刷時スタイル ─── */
+@media print {
+  .print-btn { display: none; }
+  nav { display: none !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { background: white; }
+  section, .hero, .cta-section, footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+</style>
+
+<button class="print-btn" onclick="window.print()">🖨 このページを印刷</button>
+
 <script>
 // nav scroll style
 window.addEventListener('scroll', () => {
